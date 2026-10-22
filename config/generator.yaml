@@ -1,0 +1,57 @@
+# Nassau Route Intelligence - Synthetic Lead Time Generator Configuration
+seed: 42
+seeds: [42, 101, 202, 303, 404]
+
+# Distance-sensitive adjustment: 0.5 days per 1,000 km difference from mean distance
+distance_sensitivity:
+  coefficient_per_1000km: 0.5
+
+# Order of Operations Bounds: Applied before stress injections (base), expanded for stress
+bounds:
+  base:
+    same_day: [0.0, 2.0]
+    other_modes: [1.0, 14.0]
+  stress:
+    same_day: [0.0, 6.0]
+    other_modes: [1.0, 20.0]
+
+# Empirical baseline distributions (from Section 3.1 diagnostic reconstruction calibration)
+empirical_distributions:
+  Same Day:
+    days: [0, 1, 2]
+    probabilities: [0.640, 0.336, 0.024]
+    mean: 0.38
+    std_dev: 0.53
+  First Class:
+    days: [1, 2, 3, 4, 5]
+    probabilities: [0.123, 0.353, 0.378, 0.145, 0.001]
+    mean: 2.55
+    std_dev: 0.89
+  Second Class:
+    days: [1, 2, 3, 4, 5, 6]
+    probabilities: [0.001, 0.267, 0.245, 0.209, 0.204, 0.075]
+    mean: 3.57
+    std_dev: 1.28
+  Standard Class:
+    days: [3, 4, 5, 6, 7, 8]
+    probabilities: [0.002, 0.276, 0.334, 0.217, 0.135, 0.036]
+    mean: 5.32
+    std_dev: 1.13
+
+# Stress-test delay injections
+stress_injections:
+  peak_season:
+    months: [11, 12]
+    delay_days: 1.0
+  state_delays:
+    - state: "California"
+      delay_days: 1.0
+    - state: "New York"
+      delay_days: 1.0
+  route_delays:
+    - factory: "Lot's O' Nuts"
+      state: "Texas"
+      delay_days: 1.5
+    - factory: "Wicked Choccy's"
+      state: "Texas"
+      delay_days: 1.5

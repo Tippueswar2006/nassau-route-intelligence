@@ -1,0 +1,94 @@
+{
+  "timestamp_utc": "2026-10-22T07:42:22Z",
+  "overall_passed": true,
+  "total_duration_seconds": 0.293,
+  "gates": [
+    {
+      "gate_name": "Gate 1: Simulated Cloud Startup & Parquet Artifact Loading",
+      "passed": true,
+      "status": "PASS",
+      "duration_seconds": 0.106,
+      "details": [
+        "Found Clean Orders Parquet (clean_orders.parquet): 395.4 KB",
+        "Found Route Aggregates Parquet (route_aggregates.parquet): 15.4 KB",
+        "Found Baseline Parquet (baseline.parquet): 446.1 KB",
+        "Found Distance Sensitive Parquet (distance_sensitive.parquet): 455.9 KB",
+        "Found Stress Test Parquet (stress_test.parquet): 456.1 KB",
+        "Found Metadata JSON (metadata.json): 3.3 KB",
+        "Simulated deployment mode verified: cloud",
+        "Loaded 'stress_test': 9,881 rows, 36 columns",
+        "Loaded 'route_aggregates': 196 rows, 11 columns",
+        "Loaded 'distance_sensitive': 9,881 rows, 36 columns",
+        "Loaded 'clean_orders': 9,881 rows, 30 columns",
+        "Loaded 'baseline': 9,881 rows, 36 columns",
+        "Loaded metadata.json: 3 scenarios, build seed 42"
+      ],
+      "errors": []
+    },
+    {
+      "gate_name": "Gate 2: Zero-PII Leak & Surrogate Key Audit",
+      "passed": true,
+      "status": "PASS",
+      "duration_seconds": 0.147,
+      "details": [
+        "Verified 'clean_orders': 0 forbidden geographic PII columns",
+        "Verified 'route_aggregates': 0 forbidden geographic PII columns",
+        "Verified 'baseline': 0 forbidden geographic PII columns",
+        "Verified 'distance_sensitive': 0 forbidden geographic PII columns",
+        "Verified 'stress_test': 0 forbidden geographic PII columns",
+        "Verified 'clean_orders': 5,044 valid surrogate Customer IDs (CUST-xxxxxxxx)",
+        "Verified 'clean_orders': 8,549 valid surrogate Order IDs (ORD-xxxxxxxxxx)",
+        "Verified 'baseline': 5,044 valid surrogate Customer IDs (CUST-xxxxxxxx)",
+        "Verified 'baseline': 8,549 valid surrogate Order IDs (ORD-xxxxxxxxxx)",
+        "Verified 'distance_sensitive': 5,044 valid surrogate Customer IDs (CUST-xxxxxxxx)",
+        "Verified 'distance_sensitive': 8,549 valid surrogate Order IDs (ORD-xxxxxxxxxx)",
+        "Verified 'stress_test': 5,044 valid surrogate Customer IDs (CUST-xxxxxxxx)",
+        "Verified 'stress_test': 8,549 valid surrogate Order IDs (ORD-xxxxxxxxxx)",
+        "Verified metadata.json: zero Customer ID leaks",
+        "Verified .gitignore excludes 'data/original/'",
+        "Verified .gitignore excludes 'data/derived/surrogate_key_mapping.csv'"
+      ],
+      "errors": []
+    },
+    {
+      "gate_name": "Gate 3: Automated Test Suite 100% Pass Rate",
+      "passed": true,
+      "status": "SKIPPED",
+      "duration_seconds": 0.0,
+      "details": [
+        "Test suite execution skipped by user (--skip-tests flag)."
+      ],
+      "errors": []
+    },
+    {
+      "gate_name": "Gate 4: Architectural Invariants & Hash Consistency",
+      "passed": true,
+      "status": "PASS",
+      "duration_seconds": 0.034,
+      "details": [
+        "Verified SHA-256 for clean_orders.parquet: a86aaf0dd53c70e1... (matches metadata.json)",
+        "Verified SHA-256 for route_aggregates.parquet: 42f0f1d7f3297a00... (matches metadata.json)",
+        "Verified SHA-256 for baseline.parquet: 385b9a6a88efa940... (matches metadata.json)",
+        "Verified SHA-256 for distance_sensitive.parquet: ab8e0ad7d794bbe0... (matches metadata.json)",
+        "Verified SHA-256 for stress_test.parquet: 293b1f9c7a596252... (matches metadata.json)",
+        "Verified source immutability (AD-01): 6ae9208e77ce410e... (SHA-256 verified)",
+        "Verified zero Streamlit imports across 12 backend files (AD-12)",
+        "Verified AD-02 layer provenance separation in application shell (app.py)"
+      ],
+      "errors": []
+    },
+    {
+      "gate_name": "Gate 5: Documentation Suite Completeness",
+      "passed": true,
+      "status": "PASS",
+      "duration_seconds": 0.0,
+      "details": [
+        "Verified Data Dictionary (data_dictionary.md): 12.9 KB",
+        "Verified Methodology Specification (methodology.md): 11.5 KB",
+        "Verified Synthetic Assumptions Disclosure (synthetic_assumptions.md): 9.4 KB",
+        "Verified Project README (README.md): 14.7 KB"
+      ],
+      "errors": []
+    }
+  ]
+}

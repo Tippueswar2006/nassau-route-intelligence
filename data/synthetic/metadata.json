@@ -1,0 +1,163 @@
+{
+  "generated_at_utc": "2026-10-20T10:30:25.510815+00:00",
+  "build_seed": 42,
+  "scenarios": [
+    "baseline",
+    "distance_sensitive",
+    "stress_test"
+  ],
+  "generator_settings": {
+    "seed": 42,
+    "seeds": [
+      42,
+      101,
+      202,
+      303,
+      404
+    ],
+    "distance_sensitivity": {
+      "coefficient_per_1000km": 0.5
+    },
+    "bounds": {
+      "base": {
+        "same_day": [
+          0.0,
+          2.0
+        ],
+        "other_modes": [
+          1.0,
+          14.0
+        ]
+      },
+      "stress": {
+        "same_day": [
+          0.0,
+          6.0
+        ],
+        "other_modes": [
+          1.0,
+          20.0
+        ]
+      }
+    },
+    "empirical_distributions": {
+      "Same Day": {
+        "days": [
+          0,
+          1,
+          2
+        ],
+        "probabilities": [
+          0.64,
+          0.336,
+          0.024
+        ],
+        "mean": 0.38,
+        "std_dev": 0.53
+      },
+      "First Class": {
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "probabilities": [
+          0.123,
+          0.353,
+          0.378,
+          0.145,
+          0.001
+        ],
+        "mean": 2.55,
+        "std_dev": 0.89
+      },
+      "Second Class": {
+        "days": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "probabilities": [
+          0.001,
+          0.267,
+          0.245,
+          0.209,
+          0.204,
+          0.075
+        ],
+        "mean": 3.57,
+        "std_dev": 1.28
+      },
+      "Standard Class": {
+        "days": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "probabilities": [
+          0.002,
+          0.276,
+          0.334,
+          0.217,
+          0.135,
+          0.036
+        ],
+        "mean": 5.32,
+        "std_dev": 1.13
+      }
+    },
+    "stress_injections": {
+      "peak_season": {
+        "months": [
+          11,
+          12
+        ],
+        "delay_days": 1.0
+      },
+      "state_delays": [
+        {
+          "state": "California",
+          "delay_days": 1.0
+        },
+        {
+          "state": "New York",
+          "delay_days": 1.0
+        }
+      ],
+      "route_delays": [
+        {
+          "factory": "Lot's O' Nuts",
+          "state": "Texas",
+          "delay_days": 1.5
+        },
+        {
+          "factory": "Wicked Choccy's",
+          "state": "Texas",
+          "delay_days": 1.5
+        }
+      ]
+    }
+  },
+  "artifact_checksums": {
+    "clean_orders.parquet": "a86aaf0dd53c70e1fd7b0f21927930626cf692c3731b92f75d293d3e50a07927",
+    "route_aggregates.parquet": "42f0f1d7f3297a007bd386873be654cd7b5cc4bf4fee63008b758c1adbef00e2",
+    "baseline.parquet": "385b9a6a88efa9402ca22cde73f389c6f591d61cde7ee37a89f6a76335c77af3",
+    "distance_sensitive.parquet": "ab8e0ad7d794bbe0795b6bb4d69291a84ac6984df828a6b2a9176bbc628a8a47",
+    "stress_test.parquet": "293b1f9c7a5962525e1f1bba56045b20d2ddcf73081e9416fcd22386ac2ff570"
+  },
+  "source_checksum": "6ae9208e77ce410e90073b19813d29f89853ce9f3cce43d41f9643781696e94f",
+  "reconciliation_summary": {
+    "rows": -313,
+    "units": -987,
+    "sales": -3499.51,
+    "profit": -2366.39
+  }
+}

@@ -1,0 +1,52 @@
+# Nassau Route Intelligence - Sprint Status
+generated: 10-20-2026 14:35
+last_updated: 10-21-2026 17:48
+project: Nassau Route Intelligence
+project_key: NRI
+tracking_system: file-system
+story_location: "_bmad-output/planning-artifacts/stories"
+
+development_status:
+  epic-1: done
+  1-1-configuration-tables-and-workspace-setup: done
+  1-2-dual-mode-ingestion-and-source-hash-verification: done
+  1-3-data-quality-deduplication-and-reconciliation-engine: done
+  1-4-factory-assignment-centroid-joins-and-haversine-distance: done
+  epic-1-retrospective: optional
+
+  epic-2: done
+  2-1-customer-shipment-grouping-and-synthetic-lead-time-generator: done
+  2-2-privacy-preserving-cloud-build-pipeline-and-surrogate-keys: done
+  2-3-synthetic-calibration-and-privacy-compliance-test-suite: done
+  epic-2-retrospective: optional
+
+  epic-3: done
+  3-1-precomputed-mode-adjustment-and-route-efficiency-scoring: done
+  3-2-route-aggregation-sample-guardrails-and-regional-rollups: done
+  3-3-bottleneck-screening-quadrant-and-5-seed-recovery-engine: done
+  epic-3-retrospective: optional
+
+  epic-4: done
+  4-1-streamlit-shell-global-filter-state-and-parquet-cache-loader: done
+  4-2-data-quality-and-method-audit-page: done
+  4-3-executive-overview-and-margin-analysis-page: done
+  4-4-route-efficiency-leaderboard-page: done
+  4-5-provenance-preserving-filtered-csv-export-engine: done
+  epic-4-retrospective: optional
+
+  epic-5: done
+  5-1-us-state-choropleth-heatmap-and-canadian-notice-banner: done
+  5-2-ship-mode-distribution-and-margin-by-mode-analysis: done
+  5-3-interactive-bottleneck-quadrant-scatter-visualizer: done
+  5-4-route-drilldown-and-order-timeline-visualizer: done
+  5-5-scenario-trends-and-res-weight-sensitivity-lab: done
+  epic-5-retrospective: optional
+
+  epic-6: done
+  6-1-sensitivity-analysis-and-seed-robustness-test-suite: done
+  6-2-publication-figure-generation-script: done
+  6-3-comprehensive-documentation-and-data-dictionary: done
+  6-4-cloud-deployment-validation-and-zero-pii-release-gate-check: done
+  epic-6-retrospective: optional
+
+action_items: []

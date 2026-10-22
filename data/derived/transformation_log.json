@@ -1,0 +1,58 @@
+{
+  "build_timestamp_utc": "2026-10-20T10:30:25.510815+00:00",
+  "build_duration_seconds": 19.59,
+  "input_dataset": {
+    "path": "data\\original\\nassau_candy.csv",
+    "sha256": "6ae9208e77ce410e90073b19813d29f89853ce9f3cce43d41f9643781696e94f",
+    "raw_row_count": 10194
+  },
+  "quality_audit": {
+    "duplicate_count": 313,
+    "clean_row_count": 9881,
+    "us_postal_codes_padded": 449,
+    "canadian_records_tagged": 200,
+    "product_spacing_normalized": "Wonka Bar - Scrumdiddlyumptious"
+  },
+  "reconciliation": {
+    "rows": {
+      "raw": 10194,
+      "clean": 9881,
+      "delta": -313,
+      "pct_change": -3.07
+    },
+    "units": {
+      "raw": 38654,
+      "clean": 37667,
+      "delta": -987,
+      "pct_change": -2.55
+    },
+    "sales": {
+      "raw": 141783.63,
+      "clean": 138284.12,
+      "delta": -3499.51,
+      "pct_change": -2.47
+    },
+    "profit": {
+      "raw": 93442.8,
+      "clean": 91076.41,
+      "delta": -2366.39,
+      "pct_change": -2.53
+    }
+  },
+  "order_grains": {
+    "unique_order_lines": 8549,
+    "customer_shipments": 5067,
+    "multi_factory_shipments": 1702,
+    "multi_order_line_shipments": 2240
+  },
+  "anonymization": {
+    "surrogate_customer_ids_count": 5044,
+    "surrogate_order_ids_count": 8549,
+    "dropped_columns": [
+      "City",
+      "Postal Code",
+      "Postal Code Cleaned"
+    ],
+    "mapping_file_local_only": "data\\derived\\surrogate_key_mapping.csv"
+  }
+}
